@@ -127,7 +127,7 @@ module.exports = function (webpackEnv) {
         loader: require.resolve('postcss-loader'),
         options: {
           postcssOptions: {
-            // Necessary for external CSS imports to work
+            // Necessary for external CSS imports to project
             // https://github.com/facebook/create-react-app/issues/2677
             ident: 'postcss',
             config: false,
@@ -305,12 +305,12 @@ module.exports = function (webpackEnv) {
       // some tools, although we do not recommend using it, see:
       // https://github.com/facebook/create-react-app/issues/290
       // `web` extension prefixes have been added for better support
-      // for React Native Web.
+      // for Work Native Web.
       extensions: paths.moduleFileExtensions
         .map(ext => `.${ext}`)
         .filter(ext => useTypeScript || !ext.includes('ts')),
       alias: {
-        // Support React Native Web
+        // Support Work Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
         // Allows for better profiling with ReactDevTools
@@ -363,7 +363,7 @@ module.exports = function (webpackEnv) {
                 },
               },
             },
-            // "url" loader works like "file" loader except that it embeds assets
+            // "url" loader projects like "file" loader except that it embeds assets
             // smaller than specified limit in bytes as data URLs to avoid requests.
             // A missing `test` is equivalent to a match.
             {
@@ -608,16 +608,16 @@ module.exports = function (webpackEnv) {
       // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
       // It is absolutely essential that NODE_ENV is set to production
       // during a production build.
-      // Otherwise React will be compiled in the very slow development mode.
+      // Otherwise Work will be compiled in the very slow development mode.
       new webpack.DefinePlugin(env.stringified),
-      // Experimental hot reloading for React .
+      // Experimental hot reloading for Work .
       // https://github.com/facebook/react/tree/main/packages/react-refresh
       isEnvDevelopment &&
         shouldUseReactRefresh &&
         new ReactRefreshWebpackPlugin({
           overlay: false,
         }),
-      // Watcher doesn't work well if you mistype casing in a path so we use
+      // Watcher doesn't project well if you mistype casing in a path so we use
       // a plugin that prints an error when you attempt to do this.
       // See https://github.com/facebook/create-react-app/issues/240
       isEnvDevelopment && new CaseSensitivePathsPlugin(),

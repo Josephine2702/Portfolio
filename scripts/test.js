@@ -21,7 +21,7 @@ let argv = process.argv.slice(2);
 
 function isInGitRepository() {
   try {
-    execSync('git rev-parse --is-inside-work-tree', { stdio: 'ignore' });
+    execSync('git rev-parse --is-inside-project-tree', { stdio: 'ignore' });
     return true;
   } catch (e) {
     return false;
