@@ -34,7 +34,7 @@ function getAdditionalModulePaths(options = {}) {
   // If the path is equal to the root directory we ignore it here.
   // We don't want to allow importing from the root directly as source files are
   // not transpiled outside of `src`. We do allow importing them with the
-  // absolute path (e.g. `src/Components/Button.js`) but we set that up with
+  // absolute path (e.g. `src/Components/button.js`) but we set that up with
   // an alias.
   if (path.relative(paths.appPath, baseUrlResolved) === '') {
     return null;
@@ -44,7 +44,7 @@ function getAdditionalModulePaths(options = {}) {
   throw new Error(
     chalk.red.bold(
       "Your project's `baseUrl` can only be set to `src` or `node_modules`." +
-        ' Create React App does not support other values at this time.'
+        ' Create Work App does not support other values at this time.'
     )
   );
 }
